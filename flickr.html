@@ -1,0 +1,77 @@
+<html>
+<head>
+	<title>Flickr Searcher - CSexp1 Part3</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+	<!-- navbar -->
+	<div class="row">
+		<nav class="navbar navbar-default navbar-fixed-top">
+
+			<div class="navbar-header">
+				<a href="index.html" class="navbar-brand">Home</a>
+			</div>
+
+			<ul class="nav navbar-nav">
+				<li class ="active"><a href="flickr.html">Flickr Tool</a></li>
+				<li><a href="sql.html">実装A,B,C</a></li>
+				<li><a href="ans.html">Zip Searcher</a></li>
+				<li><a href="ansall.html">Zip Searcher+</a></li>
+				<li><a href="prog00.php">prog00</a></li>
+				<li><a href="prog01.html">prog01</a></li>
+			</ul>
+
+		</nav>
+	</div>
+
+	<div class="container" style="padding:60px 0 0 0">
+
+		<p class="bg-info">一度に表示する画像は100件までです</p>
+		<form action = "flickr.php" method="post">
+			<label for="inputf">検索したい単語を入力してください</label>
+			<input id ="inputf" type="text" class="form-control" placeholder="空白文字の入力はできません" name="tag">
+			<input class="btn btn-default" type="submit" name="exec" value="検索">
+		</form>
+
+
+		<div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
+			<a style="cursor:pointer;">イメージ検索を使用する</a>
+		</div>
+
+		<div id="open" style="display:none;clear:both;">
+			<form action = "flickr.php" method="post"><!-- 
+				<input type="hidden" id="la" value="laugh"> -->
+<!-- 				<input id="la" type="image" src="./image/man01_laugh.png" value="laugh" name="laugh" width="100">
+				<input id="la" type="submit" style=" background: url(./image/man01_laugh.png) left top no-repeat;border: 0px;width:100px;" value="laugh" name="exec">
+			-->
+			<button type="submit" name="tag" value="smile" class="btn btn-default"><img src="./image/man03_smile.png"  width="100"></button>
+			<button type="submit" name="tag" value="keyboard" class="btn btn-default"><img src="./image/computer_keyboard.png"  width="100"></button>
+			<button type="submit" name="tag" value="university" class="btn btn-default"><img src="./image/daigaku_toudai.png"  width="100"></button>
+<!-- 				<input type="image" src="./image/man02_angry.png" value="angry" name="angry" width="100">
+				<input type="image" src="./image/man03_smile.png" value="smile" name="smile" width="100">
+				<input type="image" src="./image/man04_cry.png" value="cry" name="cry" width="100"> -->
+			</div>
+		</form>
+
+
+	</div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html> 
